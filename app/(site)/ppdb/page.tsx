@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { CheckIcon, ClockIcon } from "@/components/icons";
-import { PPDBForm } from "./ppdb-form";
+import { PPDBForm } from "@/components/ppdb-form";
 import { PPDB, PPDB_REQUIREMENTS, PPDB_SCHEDULE, PPDB_STEPS, SCHOOL } from "@/lib/school";
 
 export const metadata: Metadata = {

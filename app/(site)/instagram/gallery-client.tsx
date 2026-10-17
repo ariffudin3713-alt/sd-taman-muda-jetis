@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Caption } from "./caption";
-import { SafeImage } from "./safe-image";
+import { Caption } from "@/components/caption";
+import { SafeImage } from "@/components/safe-image";
 import { PostCard } from "@/components/post-card";
 import {
   MEDIA_FILTERS,

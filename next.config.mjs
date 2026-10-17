@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
     // Galeri memuat media dari beberapa host (CDN Instagram, imgbb, dll).

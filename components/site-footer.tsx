@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SchoolLogo } from "./school-logo";
 import { InstagramIcon } from "./icons";
+import { ViewSwitch } from "./view-switch";
 import { INSTAGRAM_API_URL } from "@/lib/instagram";
 import { PPDB, SCHOOL, SCHOOL_HOURS } from "@/lib/school";
 
@@ -168,17 +169,29 @@ export function SiteFooter() {
           </div>
         )}
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-primary-300 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; {year} {SCHOOL.name}. Hak cipta dilindungi.
-          </p>
-          <p>
-            Data berita diambil otomatis dari{" "}
-            <code className="rounded bg-white/10 px-1.5 py-0.5 text-[11px] text-primary-200">
-              scrap-ig-apify-u55q.vercel.app
-            </code>{" "}
-            dan diperbarui setiap jam.
-          </p>
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-primary-300">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              &copy; {year} {SCHOOL.name}. Hak cipta dilindungi.
+            </p>
+            <p>
+              Data berita diambil otomatis dari{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-[11px] text-primary-200">
+                scrap-ig-apify-u55q.vercel.app
+              </code>{" "}
+              dan diperbarui setiap jam.
+            </p>
+          </div>
+          <ViewSwitch
+            target="mobile"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-primary-200 transition hover:border-white/40 hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.9} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
+              <rect x="7" y="3" width="10" height="18" rx="2.5" />
+              <path d="M11 18h2" />
+            </svg>
+            Tampilkan versi mobile
+          </ViewSwitch>
         </div>
       </div>
     </footer>

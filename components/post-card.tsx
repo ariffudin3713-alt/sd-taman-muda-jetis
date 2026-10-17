@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Caption } from "@/app/instagram/caption";
+import { Caption } from "./caption";
 import type { PostView } from "@/lib/present";
 
 /**
