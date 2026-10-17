@@ -11,7 +11,7 @@ import {
   PinIcon,
 } from "@/components/icons";
 import { mobilePageMetadata } from "@/lib/mobile-meta";
-import { PPDB, SCHOOL, SCHOOL_HOURS, SCHOOL_MAPS } from "@/lib/school";
+import { SPMB, SCHOOL, SCHOOL_HOURS, SCHOOL_MAPS } from "@/lib/school";
 
 export const metadata: Metadata = mobilePageMetadata({
   title: "Kontak",
@@ -144,19 +144,19 @@ export default function MobileKontakPage() {
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             NPSN {SCHOOL.npsn}
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{PPDB.contactNote}</p>
+          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{SPMB.contactNote}</p>
         </div>
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      {PPDB.isOpen && (
+      {SPMB.isOpen && (
         <section className="mx-4 mb-6 rounded-3xl bg-gradient-to-br from-primary-800 to-primary-700 p-5 text-center">
           <h2 className="font-display text-lg font-bold text-white">Tertarik mendaftar?</h2>
           <p className="mt-2 text-sm leading-relaxed text-primary-100">
             Lihat alur, syarat, dan jadwal pendaftaran siswa baru.
           </p>
           <Link
-            href="/ppdb"
+            href="/spmb"
             className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-accent-400 px-4 py-3 text-sm font-semibold text-primary-950 active:scale-[0.98]"
           >
             Cek syarat pendaftaran

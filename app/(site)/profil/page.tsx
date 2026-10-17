@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { FacilityIcon, ArrowRightIcon } from "@/components/icons";
-import { FACILITIES, HISTORY, MISSIONS, PPDB, SCHOOL, VISION } from "@/lib/school";
+import { FACILITIES, HISTORY, MISSIONS, SPMB, SCHOOL, VISION } from "@/lib/school";
 
 export const metadata: Metadata = {
   title: "Profil Sekolah",
@@ -142,17 +142,17 @@ export default function ProfilPage() {
         </div>
       </section>
 
-      {/* ---------------- CTA PPDB ---------------- */}
-      {PPDB.isOpen && (
+      {/* ---------------- CTA SPMB ---------------- */}
+      {SPMB.isOpen && (
         <section className="bg-gradient-to-r from-primary-800 to-primary-700 py-16">
           <div className="container-page flex flex-col items-center gap-6 text-center">
             <h2 className="max-w-2xl font-display text-3xl font-bold text-white text-balance">
               Tertarik mendaftar?
             </h2>
             <p className="max-w-xl text-primary-100">
-              Lihat alur, syarat, dan jadwal pendaftaran siswa baru {PPDB.period}.
+              Lihat alur, syarat, dan jadwal pendaftaran siswa baru {SPMB.period}.
             </p>
-            <Link href="/ppdb" className="inline-flex items-center gap-2 rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-primary-950 transition hover:bg-accent-300 active:scale-[0.98]">
+            <Link href="/spmb" className="inline-flex items-center gap-2 rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-primary-950 transition hover:bg-accent-300 active:scale-[0.98]">
               Cek syarat pendaftaran
               <ArrowRightIcon />
             </Link>

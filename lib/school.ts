@@ -4,7 +4,7 @@
  * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
  *
  * Semua konten statis situs (profil, visi & misi, sejarah, fasilitas,
- * ekstrakurikuler, PPDB, kontak) dikumpulkan di satu file supaya mudah
+ * profil, SPMB, kontak) dikumpulkan di satu file supaya mudah
  * diperbarui tanpa menyentuh komponen.
  *
  * Ingin mengganti isi? Cukup edit nilai di bawah â€” tidak ada kode
@@ -78,7 +78,7 @@ export const VISION =
 export const MISSIONS = [
   "Menyelenggarakan pembelajaran yang inovatif, kreatif, dan menyenangkan.",
   "Menanamkan nilai-nilai keagamaan dan budi pekerti luhur dalam keseharian.",
-  "Mengembangkan minat dan bakat siswa melalui kegiatan ekstrakurikuler.",
+  "Mengembangkan minat dan bakat siswa melalui kegiatan pengembangan diri.",
   "Meningkatkan penguasaan teknologi informasi dan komunikasi.",
   "Membangun lingkungan sekolah yang bersih, hijau, dan ramah anak.",
 ] as const;
@@ -99,53 +99,24 @@ export const FACILITIES = [
 export type FacilityIcon = (typeof FACILITIES)[number]["icon"];
 
 /* ------------------------------------------------------------------ *
- * Ekstrakurikuler
+ * SPMB (Seleksi Penerimaan Murid Baru)
  * ------------------------------------------------------------------ */
 
-/** `category` menentukan warna badge (lihat EXTRACURRICULAR_TONES). */
-export const EXTRACURRICULAR = [
-  { name: "Pramuka", category: "Wajib", schedule: "Jumat, 15.00 WIB", description: "Melatih kedisiplinan, kemandirian, dan kepemimpinan." },
-  { name: "Paskibra", category: "Organisasi", schedule: "Sabtu, 08.00 WIB", description: "Membentuk ketahanan fisik dan baris-berbaris." },
-  { name: "PMR", category: "Sosial", schedule: "Rabu, 15.30 WIB", description: "Edukasi pertolongan pertama dan kepedulian sosial." },
-  { name: "Tahfidz", category: "Keagaamaan", schedule: "Senin & Kamis, 13.30 WIB", description: "Menghafal Al-Qurâ€™an dan seni membaca dengan tartil." },
-  { name: "Futsal & Basket", category: "Olahraga", schedule: "Selasa & Kamis, 16.00 WIB", description: "Mengasah kemampuan fisik dan kerja sama tim." },
-  { name: "Klub Komputer & Coding", category: "Akademik", schedule: "Senin, 15.30 WIB", description: "Dasar pemrograman, dokumen, dan desain." },
-  { name: "Seni Musik & Tari", category: "Seni", schedule: "Rabu, 15.00 WIB", description: "Mengekspresikan kreativitas dan seni budaya." },
-  { name: "Pencak Silat", category: "Olahraga", schedule: "Jumat, 16.00 WIB", description: "Melatih kelenturan, ketangkasan, dan percaya diri." },
-] as const;
-
-export type ExtracurricularCategory = (typeof EXTRACURRICULAR)[number]["category"];
-
-/** Warna badge per kategori, tetap satu keluarga visual dengan palet hijau-emas. */
-export const EXTRACURRICULAR_TONES: Record<ExtracurricularCategory, string> = {
-  Wajib: "bg-primary-100 text-primary-800",
-  Organisasi: "bg-amber-100 text-amber-800",
-  Sosial: "bg-rose-100 text-rose-800",
-  Keagaamaan: "bg-emerald-100 text-emerald-800",
-  Olahraga: "bg-orange-100 text-orange-800",
-  Akademik: "bg-sky-100 text-sky-800",
-  Seni: "bg-violet-100 text-violet-800",
-};
-
-/* ------------------------------------------------------------------ *
- * PPDB
- * ------------------------------------------------------------------ */
-
-export const PPDB = {
+export const SPMB = {
   isOpen: true,
   period: "Gelombang I Tahun Ajaran 2026/2027",
   quota: 120,
   contactNote: "Pendaftaran dilakukan langsung di sekolah pada jam kerja.",
 } as const;
 
-export const PPDB_STEPS = [
+export const SPMB_STEPS = [
   { step: "1", title: "Pengambilan Formulir", description: "Datang ke sekolah pada jam kerja dan isi formulir pendaftaran." },
   { step: "2", title: "Pemberian Berkas", description: "Serahkan dokumen pendukung bersama wali murid." },
   { step: "3", title: "Wawancara Orang Tua", description: "Wawancara singkat dengan kepala sekolah dan wali kelas." },
   { step: "4", title: "Pengumuman", description: "Hasil seleksi diumumkan dan pendaftaran dilunasi." },
 ] as const;
 
-export const PPDB_REQUIREMENTS = [
+export const SPMB_REQUIREMENTS = [
   "Fotokopi akta kelahiran calon siswa",
   "Fotokopi kartu keluarga",
   "Fotokopi rapor semester terakhir",
@@ -154,7 +125,7 @@ export const PPDB_REQUIREMENTS = [
   "Bukti pembayaran uang pangkal",
 ] as const;
 
-export const PPDB_SCHEDULE = [
+export const SPMB_SCHEDULE = [
   { stage: "Pendaftaran", date: "1 â€“ 20 Juni 2026" },
   { stage: "Seleksi & Wawancara", date: "21 â€“ 25 Juni 2026" },
   { stage: "Pengumuman", date: "27 Juni 2026" },
@@ -169,6 +140,6 @@ export const HOME_STATS = [
   { value: "A", label: "Akreditasi" },
   { value: "420+", label: "Siswa aktif" },
   { value: "38+", label: "Guru dan staf" },
-  { value: "8", label: "Ekstrakurikuler" },
+  { value: "8", label: "Program pengembangan diri" },
 ] as const;
 

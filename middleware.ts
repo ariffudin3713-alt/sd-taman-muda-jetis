@@ -25,11 +25,10 @@ const MOBILE_UA =
 const MOBILE_ROUTES: RegExp[] = [
   /^\/$/,
   /^\/profil\/?$/,
-  /^\/ekstrakurikuler\/?$/,
   /^\/berita\/?$/,
   /^\/berita\/[^/]+\/?$/,
   /^\/kontak\/?$/,
-  /^\/ppdb\/?$/,
+  /^\/spmb\/?$/,
   /^\/instagram\/?$/,
 ];
 

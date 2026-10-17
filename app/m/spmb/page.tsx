@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 import { MobileShell } from "@/components/mobile/mobile-shell";
 import { MobileHero, MobileSectionHeading } from "@/components/mobile/mobile-ui";
-import { PPDBForm } from "@/components/ppdb-form";
+import { SPMBForm } from "@/components/spmb-form";
 import { CheckIcon, ClockIcon } from "@/components/icons";
 import { mobilePageMetadata } from "@/lib/mobile-meta";
-import { PPDB, PPDB_REQUIREMENTS, PPDB_SCHEDULE, PPDB_STEPS, SCHOOL } from "@/lib/school";
+import { SPMB, SPMB_REQUIREMENTS, SPMB_SCHEDULE, SPMB_STEPS, SCHOOL } from "@/lib/school";
 
 export const metadata: Metadata = mobilePageMetadata({
-  title: "PPDB",
+  title: "SPMB",
   description:
     "Informasi alur, syarat, dan jadwal pendaftaran peserta didik baru SD Taman Muda Jetis.",
-  path: "/ppdb",
+  path: "/spmb",
 });
 
-export default function MobilePPDBPage() {
+export default function MobileSpmbPage() {
   return (
-    <MobileShell active="ppdb">
+    <MobileShell active="spmb">
       <MobileHero
-        eyebrow={PPDB.period}
+        eyebrow={SPMB.period}
         title="Penerimaan Peserta Didik Baru"
         description="Lihat alur, syarat, dan jadwal pendaftaran siswa baru."
       >
-        {PPDB.isOpen && (
+        {SPMB.isOpen && (
           <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-accent-300 ring-1 ring-white/15">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
             Pendaftaran sedang dibuka
@@ -33,7 +33,7 @@ export default function MobilePPDBPage() {
       <section className="px-4 py-6">
         <MobileSectionHeading eyebrow="Alur" title="Tahapan pendaftaran" />
         <ol className="relative space-y-4 border-l-2 border-dashed border-primary-200 pl-6">
-          {PPDB_STEPS.map((item) => (
+          {SPMB_STEPS.map((item) => (
             <li key={item.step} className="relative">
               <span
                 aria-hidden="true"
@@ -52,9 +52,9 @@ export default function MobilePPDBPage() {
 
       {/* ---------------- Jadwal ---------------- */}
       <section className="bg-white px-4 py-6">
-        <MobileSectionHeading eyebrow="Jadwal" title="Jadwal PPDB" />
+        <MobileSectionHeading eyebrow="Jadwal" title="Jadwal SPMB" />
         <dl className="space-y-2.5">
-          {PPDB_SCHEDULE.map((row) => (
+          {SPMB_SCHEDULE.map((row) => (
             <div
               key={row.stage}
               className="rounded-2xl border border-primary-100 bg-mist p-4"
@@ -70,10 +70,10 @@ export default function MobilePPDBPage() {
 
         <div className="mt-3 rounded-2xl border border-primary-100 bg-primary-50 p-4">
           <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
-            Kuota {PPDB.quota.toLocaleString("id-ID")} peserta
+            Kuota {SPMB.quota.toLocaleString("id-ID")} peserta
           </p>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            {PPDB.contactNote} Untuk pendaftaran langsung, hubungi{" "}
+            {SPMB.contactNote} Untuk pendaftaran langsung, hubungi{" "}
             <a
               href={SCHOOL.phoneHref}
               className="font-semibold text-primary-700 underline underline-offset-2"
@@ -89,7 +89,7 @@ export default function MobilePPDBPage() {
       <section className="px-4 py-6">
         <MobileSectionHeading eyebrow="Persyaratan" title="Berkas yang dibutuhkan" />
         <ul className="space-y-2.5">
-          {PPDB_REQUIREMENTS.map((item) => (
+          {SPMB_REQUIREMENTS.map((item) => (
             <li
               key={item}
               className="flex items-start gap-3 rounded-2xl border border-primary-100 bg-white p-4"
@@ -110,7 +110,7 @@ export default function MobilePPDBPage() {
           Pendaftaran tetap dilakukan langsung di sekolah. Formulir ini membantu panitia
           menyiapkan data calon siswa.
         </p>
-        <PPDBForm />
+        <SPMBForm />
       </section>
     </MobileShell>
   );

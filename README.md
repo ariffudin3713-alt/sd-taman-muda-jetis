@@ -1,7 +1,7 @@
 # Website SD Taman Muda Jetis
 
-Website sekolah lengkap: profil, ekstrakurikuler, berita, galeri kegiatan, kontak, dan
-informasi PPDB. Konten berita dan galeri ditarik otomatis dari feed Instagram sekolah.
+Website sekolah lengkap: profil, berita, galeri kegiatan, kontak, dan
+informasi SPMB. Konten berita dan galeri ditarik otomatis dari feed Instagram sekolah.
 
 Data ditarik dari API scraper Instagram di
 [`scrap-ig-apify-u55q.vercel.app`](https://scrap-ig-apify-u55q.vercel.app/api/instagram/),
@@ -43,45 +43,51 @@ Buka <http://localhost:3000>.
 | --- | --- |
 | `/` | Hero, statistik sekolah, sambutan kepala sekolah, berita terbaru, prestasi, galeri |
 | `/profil` | Visi, misi, sejarah, data sekolah, fasilitas |
-| `/ekstrakurikuler` | Daftar kegiatan (kategori + jadwal) |
 | `/berita` | Daftar berita + filter kategori |
 | `/berita/[slug]` | Detail artikel: media, paragraf, hashtag, tautan, berita lainnya |
 | `/kontak` | Alamat, telepon, email, Instagram, peta Google, jam layanan |
-| `/ppdb` | Alur, jadwal, syarat, dan formulir pendaftaran |
+| `/spmb` | Alur, jadwal, syarat, dan formulir SPMB |
 | `/instagram` | Galeri penuh: filter media/kategori, pencarian, lightbox |
 
 ## Struktur
 
 ```
 app/
-  layout.tsx              # Root layout, font, header & footer
-  page.tsx                # Beranda
+  layout.tsx              # Root layout, font, metadata
   globals.css             # Token komponen (.btn-primary, .eyebrow, dll.)
   sitemap.ts              # Peta situs (otomatis ikut memuat semua berita)
   robots.ts
-  profil/page.tsx
-  ekstrakurikuler/page.tsx
-  berita/
-    page.tsx              # Daftar berita + filter kategori
-    [slug]/page.tsx       # Detail artikel + JSON-LD schema.org
-  kontak/page.tsx
-  ppdb/
+  (site)/                 # Semua halaman desktop (chrome: header + footer)
+    layout.tsx
+    page.tsx              # Beranda
+    profil/page.tsx
+    berita/
+      page.tsx            # Daftar berita + filter kategori
+      [slug]/page.tsx     # Detail artikel + JSON-LD schema.org
+    kontak/page.tsx
+    spmb/page.tsx
+    instagram/
+      page.tsx            # Halaman galeri (server component)
+      gallery-client.tsx  # Filter, pencarian, lightbox (client component)
+  m/                      # Halaman khusus mobile (chrome: header + tab bar)
     page.tsx
-    ppdb-form.tsx         # Formulir (client component, validasi)
-  instagram/
-    page.tsx              # Halaman galeri (server component)
-    gallery-client.tsx    # Filter, pencarian, lightbox (client component)
-    caption.tsx           # Render caption (markdown + tautan)
-    safe-image.tsx        # <img> dengan fallback
+    profil/page.tsx
+    berita/page.tsx, berita/[slug]/page.tsx
+    kontak/page.tsx, spmb/page.tsx, instagram/page.tsx
+middleware.ts             # Deteksi perangkat + rewrite ke /m* (cookie `tampilan`)
 components/
   site-header.tsx         # Header sticky + menu mobile
-  site-footer.tsx         # Footer
+  site-footer.tsx         # Footer + tombol "Tampilkan versi mobile"
+  mobile/                 # Header, tab bar, shell, dan UI khusus mobile
   page-hero.tsx           # Pita judul untuk halaman dalam
   post-card.tsx           # Kartu galeri (server-safe)
   berita-card.tsx         # Kartu artikel berita
   section-heading.tsx     # Judul section
   copy-link-button.tsx    # "Salin tautan" di detail berita
+  spmb-form.tsx           # Formulir SPMB (client component, validasi)
+  view-switch.tsx         # Tombol pindah versi desktop/mobile
   icons.tsx               # Ikon garis 24x24 yang dipakai lintas halaman
+  caption.tsx, safe-image.tsx
   school-logo.tsx         # Monogram logo (SVG, tanpa aset gambar)
 lib/
   school.ts               # ⚠ SEMUA KONTEN STATIS DI SINI
@@ -89,11 +95,13 @@ lib/
   berita.ts               # Bentuk artikel: slug, paragraf, kategori
   format.ts               # Parser caption, tanggal, angka
   present.ts              # Judul/kategori otomatis + view model
+  view.ts                 # Cookie pilihan tampilan (mobile/desktop)
+  mobile-meta.ts          # Metadata halaman mobile
 ```
 
 ## Mengganti konten sekolah
 
-Seluruh teks profil, visi & misi, sejarah, fasilitas, ekstrakurikuler, PPDB, dan kontak
+Seluruh teks profil, visi & misi, sejarah, fasilitas, SPMB, dan kontak
 berada di **`lib/school.ts`**. Edit nilai di sana — tidak perlu menyentuh komponen.
 
 Isi file tersebut saat ini **teks contoh** untuk SD Taman Muda Jetis. Yang perlu diganti
@@ -107,16 +115,15 @@ dengan data asli sekolah:
 | `HEAD_MASTER` | Nama dan sambutan kepala sekolah |
 | `VISION`, `MISSIONS`, `HISTORY` | Profil sekolah |
 | `FACILITIES` | Fasilitas (+ `icon`: `computer`, `book`, `flask`, `ball`, `music`, `mosque`) |
-| `EXTRACURRICULAR` | Daftar kegiatan + jadwal |
-| `PPDB*` | Periode, kuota, alur, syarat, jadwal |
+| `SPMB*` | Periode, kuota, alur, syarat, jadwal |
 | `HOME_STATS` | Angka statistik di beranda |
 
 > Foto kepala sekolah dibaca dari `HEAD_MASTER.photo`. Bila file gambar belum ada, halaman
 > otomatis menampilkan kotak cadangan — tidak perlu ubah kode.
 
-## Formulir PPDB
+## Formulir SPMB
 
-`app/ppdb/ppdb-form.tsx` masih **demo**: data divalidasi lalu ditampilkan pesan sukses,
+`components/spmb-form.tsx` masih **demo**: data divalidasi lalu ditampilkan pesan sukses,
 tapi **tidak dikirim ke mana pun**. Untuk menyimpan data sungguhan, ubah `handleSubmit`
 di file tersebut agar memanggil route API (`app/api/...`), layanan email, atau tautan
 WhatsApp.

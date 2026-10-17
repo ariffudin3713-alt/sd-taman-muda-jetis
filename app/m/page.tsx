@@ -7,7 +7,7 @@ import { getBerita } from "@/lib/berita";
 import { buildCategories, computeStats, toPostView, type PostView } from "@/lib/present";
 import { formatCount } from "@/lib/format";
 import { mobilePageMetadata } from "@/lib/mobile-meta";
-import { HEAD_MASTER, HOME_STATS, PPDB, SCHOOL } from "@/lib/school";
+import { HEAD_MASTER, HOME_STATS, SPMB, SCHOOL } from "@/lib/school";
 
 /** Data di-refresh tiap jam agar URL media CDN tetap berlaku. */
 export const revalidate = 3600;
@@ -28,8 +28,8 @@ const STAT_KEYS = [
 
 const QUICK_ACTIONS = [
   {
-    href: "/ppdb",
-    label: "Daftar PPDB",
+    href: "/spmb",
+    label: "Daftar SPMB",
     className: "bg-accent-400 text-primary-950",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.9} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
@@ -104,7 +104,7 @@ export default async function MobileHomePage() {
 
         <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent-300 ring-1 ring-white/15">
           <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
-          {PPDB.isOpen ? `PPDB ${PPDB.period.split(" ")[0]} dibuka` : "Galeri kegiatan sekolah"}
+          {SPMB.isOpen ? `SPMB ${SPMB.period.split(" ")[0]} dibuka` : "Galeri kegiatan sekolah"}
         </span>
 
         <h1 className="mt-3 font-display text-[26px] font-extrabold leading-tight tracking-tight text-white text-balance">
@@ -117,10 +117,10 @@ export default async function MobileHomePage() {
 
         <div className="mt-5 flex gap-2.5">
           <Link
-            href={PPDB.isOpen ? "/ppdb" : "/instagram"}
+            href={SPMB.isOpen ? "/spmb" : "/instagram"}
             className="flex flex-1 items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-semibold text-primary-900 active:scale-[0.98]"
           >
-            {PPDB.isOpen ? "Daftar sekarang" : "Lihat galeri"}
+            {SPMB.isOpen ? "Daftar sekarang" : "Lihat galeri"}
           </Link>
           <Link
             href="/berita"
@@ -337,18 +337,18 @@ export default async function MobileHomePage() {
       {/* ---------------- CTA ---------------- */}
       <section className="mx-4 mb-6 rounded-3xl bg-gradient-to-br from-primary-800 to-primary-700 p-5 text-center">
         <h2 className="font-display text-lg font-bold text-white text-balance">
-          {PPDB.isOpen ? "Ingin bergabung dengan kami?" : "Lihat kegiatan terbaru sekolah"}
+          {SPMB.isOpen ? "Ingin bergabung dengan kami?" : "Lihat kegiatan terbaru sekolah"}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-primary-100">
-          {PPDB.isOpen
-            ? `Lihat alur, syarat, dan jadwal pendaftaran siswa baru ${PPDB.period}.`
+          {SPMB.isOpen
+            ? `Lihat alur, syarat, dan jadwal pendaftaran siswa baru ${SPMB.period}.`
             : "Buka galeri lengkap untuk melihat foto, video, dan pengumuman sekolah."}
         </p>
         <Link
-          href={PPDB.isOpen ? "/ppdb" : "/instagram"}
+          href={SPMB.isOpen ? "/spmb" : "/instagram"}
           className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-accent-400 px-4 py-3 text-sm font-semibold text-primary-950 active:scale-[0.98]"
         >
-          {PPDB.isOpen ? "Cek syarat pendaftaran" : "Buka galeri"}
+          {SPMB.isOpen ? "Cek syarat pendaftaran" : "Buka galeri"}
         </Link>
       </section>
     </MobileShell>

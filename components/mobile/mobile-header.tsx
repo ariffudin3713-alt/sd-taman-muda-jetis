@@ -6,14 +6,13 @@ import { useEffect, useState } from "react";
 import { SchoolLogo } from "@/components/school-logo";
 import { InstagramIcon } from "@/components/icons";
 import { ViewSwitch } from "@/components/view-switch";
-import { PPDB, SCHOOL } from "@/lib/school";
+import { SPMB, SCHOOL } from "@/lib/school";
 
 const MENU_LINKS = [
   { href: "/profil", label: "Profil Sekolah" },
-  { href: "/ekstrakurikuler", label: "Ekstrakurikuler" },
   { href: "/berita", label: "Berita & Pengumuman" },
   { href: "/instagram", label: "Galeri Instagram" },
-  { href: "/ppdb", label: "PPDB" },
+  { href: "/spmb", label: "SPMB" },
   { href: "/kontak", label: "Kontak" },
 ];
 
@@ -59,15 +58,15 @@ export function MobileHeader() {
           id="menu-mobile-panel"
           className="animate-fade-in border-t border-primary-100 bg-white px-4 pb-4 pt-3"
         >
-          {PPDB.isOpen && (
+          {SPMB.isOpen && (
             <Link
-              href="/ppdb"
+              href="/spmb"
               className="mb-3 flex items-center justify-between rounded-2xl bg-primary-800 px-4 py-3 text-sm font-semibold text-white"
             >
               <span>
-                PPDB dibuka
+                SPMB dibuka
                 <span className="mt-0.5 block text-xs font-normal text-primary-200">
-                  {PPDB.period}
+                  {SPMB.period}
                 </span>
               </span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-4 w-4" aria-hidden="true">

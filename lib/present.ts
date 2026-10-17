@@ -38,7 +38,7 @@ export type PostCategory =
   | "Berita";
 
 /** Urutan penting: kategori pertama yang cocok menang. */
-const CATEGORY_RULES: ReadonlyArray<readonly [PostCategory, RegExp]> = [  ["Pengumuman", /pengumuman|pendaftaran|undangan|rekrutmen|gathering|\bppmb\b|\bspmb\b|\bppdb\b|info ppm|PPTS/i],
+const CATEGORY_RULES: ReadonlyArray<readonly [PostCategory, RegExp]> = [  ["Pengumuman", /pengumuman|pendaftaran|undangan|rekrutmen|gathering|\bppmb\b|\bspmb\b|info ppm|PPTS/i],
   ["Prestasi", /juara|trophy|juaraan|medali|pembina|prestasi|mengollow|podium/i],
   ["Lomba", /\blomba\b|art fest|\bfest\b|turnamen|kompetisi|karnaval|lombatarikreasi/i],
   [

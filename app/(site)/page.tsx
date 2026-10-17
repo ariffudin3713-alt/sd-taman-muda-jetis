@@ -6,7 +6,7 @@ import { getInstagramPosts } from "@/lib/instagram";
 import { getBerita } from "@/lib/berita";
 import { buildCategories, computeStats, toPostView, type PostView } from "@/lib/present";
 import { formatCount } from "@/lib/format";
-import { HEAD_MASTER, HOME_STATS, PPDB } from "@/lib/school";
+import { HEAD_MASTER, HOME_STATS, SPMB } from "@/lib/school";
 
 /** Data di-refresh tiap jam agar URL media dari CDN tetap berlaku. */
 export const revalidate = 3600;
@@ -62,7 +62,7 @@ export default async function HomePage() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-accent-300 ring-1 ring-white/15">
               <span className="h-2 w-2 rounded-full bg-accent-400" />
-              {PPDB.isOpen ? "Penerimaan siswa baru dibuka" : "Galeri Kegiatan Sekolah"}
+              {SPMB.isOpen ? "Penerimaan siswa baru dibuka" : "Galeri Kegiatan Sekolah"}
             </span>
 
             <h1 className="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight text-white text-balance sm:text-5xl">
@@ -76,9 +76,9 @@ export default async function HomePage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {PPDB.isOpen && (
+              {SPMB.isOpen && (
                 <Link
-                  href="/ppdb"
+                  href="/spmb"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary-900 transition hover:bg-primary-50 active:scale-[0.98]"
                 >
                   Daftar sekarang
@@ -319,17 +319,17 @@ export default async function HomePage() {
       <section className="bg-gradient-to-r from-primary-800 to-primary-700 py-16">
         <div className="container-page flex flex-col items-center gap-6 text-center">
           <h2 className="max-w-2xl font-display text-3xl font-bold text-white text-balance">
-            {PPDB.isOpen ? "Ingin bergabung dengan kami?" : "Ingin melihat kegiatan terbaru sekolah?"}
+            {SPMB.isOpen ? "Ingin bergabung dengan kami?" : "Ingin melihat kegiatan terbaru sekolah?"}
           </h2>
           <p className="max-w-xl text-primary-100">
-            {PPDB.isOpen
-              ? `Lihat alur, syarat, dan jadwal pendaftaran siswa baru ${PPDB.period}.`
+            {SPMB.isOpen
+              ? `Lihat alur, syarat, dan jadwal pendaftaran siswa baru ${SPMB.period}.`
               : "Buka galeri lengkap untuk melihat foto, video, dan pengumuman sekolah."}
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {PPDB.isOpen && (
+            {SPMB.isOpen && (
               <Link
-                href="/ppdb"
+                href="/spmb"
                 className="rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-primary-950 transition hover:bg-accent-300 active:scale-[0.98]"
               >
                 Cek syarat pendaftaran

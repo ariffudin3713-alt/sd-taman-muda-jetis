@@ -4,10 +4,9 @@ import Link from "next/link";
 export type MobileTab =
   | "beranda"
   | "profil"
-  | "ekstrakurikuler"
   | "berita"
   | "kontak"
-  | "ppdb"
+  | "spmb"
   | "instagram";
 
 const glyph = {
@@ -57,9 +56,9 @@ const TABS: Array<{ key: MobileTab; href: string; label: string; icon: React.Rea
     ),
   },
   {
-    key: "ppdb",
-    href: "/ppdb",
-    label: "PPDB",
+    key: "spmb",
+    href: "/spmb",
+    label: "SPMB",
     icon: (
       <svg {...glyph} className="h-6 w-6" aria-hidden="true">
         <circle cx="10" cy="8" r="3.5" />

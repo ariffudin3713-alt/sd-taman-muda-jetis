@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CheckIcon } from "@/components/icons";
 
 /**
- * Formulir minat pendaftaran PPDB.
+ * Formulir minat pendaftaran SPMB.
  *
  * CATATAN: ini masih DEMO. Data belum dikirim ke mana pun — hanya tampil
  * pesan konfirmasi. Untuk menyimpan data sungguhan, kirim `handleSubmit`
@@ -44,7 +44,7 @@ function validate(data: FormData): Errors {
   return errors;
 }
 
-export function PPDBForm() {
+export function SPMBForm() {
   const [data, setData] = useState<FormData>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
@@ -72,7 +72,7 @@ export function PPDBForm() {
           Pendaftaran Berhasil Dikirim
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-emerald-800">
-          Terima kasih. Data <strong>{data.nama}</strong> sudah tercatat. Panitia PPDB
+          Terima kasih. Data <strong>{data.nama}</strong> sudah tercatat. Panitia SPMB
           akan menghubungi orang tua melalui nomor WhatsApp yang diisi.
         </p>
         <button
@@ -196,7 +196,7 @@ export function PPDBForm() {
 
       <p className="mt-4 text-center text-xs leading-relaxed text-ink-soft">
         Dengan mengirim formulir ini, orang tua menyetujui data kontak di atas
-        digunakan oleh panitia PPDB sekolah.
+        digunakan oleh panitia SPMB sekolah.
       </p>
     </form>
   );

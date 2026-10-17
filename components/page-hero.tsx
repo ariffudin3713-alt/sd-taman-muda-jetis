@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * Pita judul untuk halaman dalam (Profil, Ekstrakurikuler, Berita, Kontak, PPDB).
+ * Pita judul untuk halaman dalam (Profil, Berita, Kontak, SPMB).
  * Menggantikan pola hero yang berulang di tiap halaman supaya tetap seragam.
  */
 export function PageHero({

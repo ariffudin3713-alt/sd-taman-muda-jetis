@@ -3,15 +3,14 @@ import { SchoolLogo } from "./school-logo";
 import { InstagramIcon } from "./icons";
 import { ViewSwitch } from "./view-switch";
 import { INSTAGRAM_API_URL } from "@/lib/instagram";
-import { PPDB, SCHOOL, SCHOOL_HOURS } from "@/lib/school";
+import { SPMB, SCHOOL, SCHOOL_HOURS } from "@/lib/school";
 
 const NAV_LINKS = [
   { href: "/", label: "Beranda" },
   { href: "/profil", label: "Profil Sekolah" },
-  { href: "/ekstrakurikuler", label: "Ekstrakurikuler" },
   { href: "/berita", label: "Berita" },
   { href: "/kontak", label: "Kontak" },
-  { href: "/ppdb", label: "PPDB" },
+  { href: "/spmb", label: "SPMB" },
 ];
 
 const GALERI_LINKS = [
@@ -149,19 +148,19 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Ajakan PPDB */}
-        {PPDB.isOpen && (
+        {/* Ajakan SPMB */}
+        {SPMB.isOpen && (
           <div className="mt-12 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-display text-lg font-bold text-white">
-                PPDB {PPDB.period} sedang dibuka
+                SPMB {SPMB.period} sedang dibuka
               </p>
               <p className="mt-1 text-sm text-primary-200">
-                Kuota {PPDB.quota.toLocaleString("id-ID")} peserta. Daftar lebih awal.
+                Kuota {SPMB.quota.toLocaleString("id-ID")} peserta. Daftar lebih awal.
               </p>
             </div>
             <Link
-              href="/ppdb"
+              href="/spmb"
               className="shrink-0 rounded-full bg-accent-400 px-5 py-2.5 text-center text-sm font-semibold text-primary-950 transition hover:bg-accent-300"
             >
               Lihat Syarat Pendaftaran

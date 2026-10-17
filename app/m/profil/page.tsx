@@ -4,7 +4,7 @@ import { MobileShell } from "@/components/mobile/mobile-shell";
 import { MobileHero, MobileSectionHeading } from "@/components/mobile/mobile-ui";
 import { FacilityIcon } from "@/components/icons";
 import { mobilePageMetadata } from "@/lib/mobile-meta";
-import { FACILITIES, HISTORY, MISSIONS, PPDB, SCHOOL, VISION } from "@/lib/school";
+import { FACILITIES, HISTORY, MISSIONS, SPMB, SCHOOL, VISION } from "@/lib/school";
 
 export const metadata: Metadata = mobilePageMetadata({
   title: "Profil Sekolah",
@@ -17,7 +17,7 @@ const FACTS = [
   { label: "Tahun berdiri", value: "1995" },
   { label: "Akreditasi", value: "A" },
   { label: "NPSN", value: SCHOOL.npsn },
-  { label: "Ekstrakurikuler", value: "8" },
+  { label: "Program pengembangan diri", value: "8" },
 ];
 
 export default function MobileProfilPage() {
@@ -113,14 +113,14 @@ export default function MobileProfilPage() {
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      {PPDB.isOpen && (
+      {SPMB.isOpen && (
         <section className="mx-4 mb-6 rounded-3xl bg-gradient-to-br from-primary-800 to-primary-700 p-5 text-center">
           <h2 className="font-display text-lg font-bold text-white">Tertarik mendaftar?</h2>
           <p className="mt-2 text-sm leading-relaxed text-primary-100">
-            Lihat alur, syarat, dan jadwal pendaftaran siswa baru {PPDB.period}.
+            Lihat alur, syarat, dan jadwal pendaftaran siswa baru {SPMB.period}.
           </p>
           <Link
-            href="/ppdb"
+            href="/spmb"
             className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-accent-400 px-4 py-3 text-sm font-semibold text-primary-950 active:scale-[0.98]"
           >
             Cek syarat pendaftaran

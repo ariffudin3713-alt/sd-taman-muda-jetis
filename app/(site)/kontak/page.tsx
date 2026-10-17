@@ -10,7 +10,7 @@ import {
   PhoneIcon,
   PinIcon,
 } from "@/components/icons";
-import { PPDB, SCHOOL, SCHOOL_HOURS, SCHOOL_MAPS } from "@/lib/school";
+import { SPMB, SCHOOL, SCHOOL_HOURS, SCHOOL_MAPS } from "@/lib/school";
 
 export const metadata: Metadata = {
   title: "Kontak",
@@ -161,7 +161,7 @@ export default function KontakPage() {
                   NPSN {SCHOOL.npsn}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  {PPDB.contactNote}
+                  {SPMB.contactNote}
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function KontakPage() {
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      {PPDB.isOpen && (
+      {SPMB.isOpen && (
         <section className="bg-gradient-to-r from-primary-800 to-primary-700 py-16">
           <div className="container-page flex flex-col items-center gap-6 text-center">
             <h2 className="max-w-2xl font-display text-3xl font-bold text-white text-balance">
@@ -180,7 +180,7 @@ export default function KontakPage() {
               Lihat alur, syarat, dan jadwal pendaftaran siswa baru.
             </p>
             <Link
-              href="/ppdb"
+              href="/spmb"
               className="inline-flex items-center gap-2 rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-primary-950 transition hover:bg-accent-300 active:scale-[0.98]"
             >
               Cek syarat pendaftaran

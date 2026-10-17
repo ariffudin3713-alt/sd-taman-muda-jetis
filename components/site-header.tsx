@@ -5,12 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SchoolLogo } from "./school-logo";
 import { InstagramIcon } from "./icons";
-import { PPDB, SCHOOL } from "@/lib/school";
+import { SPMB, SCHOOL } from "@/lib/school";
 
 const NAV = [
   { href: "/", label: "Beranda" },
   { href: "/profil", label: "Profil" },
-  { href: "/ekstrakurikuler", label: "Ekstrakurikuler" },
   { href: "/berita", label: "Berita" },
   { href: "/kontak", label: "Kontak" },
 ];
@@ -82,8 +81,8 @@ export function SiteHeader() {
             Ikuti Kami
           </a>
 
-          <Link href="/ppdb" className="btn-primary hidden sm:inline-flex">
-            PPDB
+          <Link href="/spmb" className="btn-primary hidden sm:inline-flex">
+            SPMB
           </Link>
 
           <button
@@ -122,12 +121,12 @@ export function SiteHeader() {
             >
               Galeri Instagram
             </Link>
-            {PPDB.isOpen && (
+            {SPMB.isOpen && (
               <Link
-                href="/ppdb"
+                href="/spmb"
                 className="mt-1 rounded-lg bg-primary-700 px-3 py-3 text-center text-sm font-semibold text-white"
               >
-                PPDB {SCHOOL.shortName}
+                SPMB {SCHOOL.shortName}
               </Link>
             )}
             <a

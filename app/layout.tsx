@@ -10,7 +10,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const DESCRIPTION =
-  "Website resmi SD Taman Muda Jetis, Jetis, Yogyakarta. Profil sekolah, ekstrakurikuler, berita, galeri kegiatan, dan informasi PPDB.";
+  "Website resmi SD Taman Muda Jetis, Jetis, Yogyakarta. Profil sekolah, berita, galeri kegiatan, dan informasi SPMB.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

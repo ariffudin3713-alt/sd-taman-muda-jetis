@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { CheckIcon, ClockIcon } from "@/components/icons";
-import { PPDBForm } from "@/components/ppdb-form";
-import { PPDB, PPDB_REQUIREMENTS, PPDB_SCHEDULE, PPDB_STEPS, SCHOOL } from "@/lib/school";
+import { SPMBForm } from "@/components/spmb-form";
+import { SPMB, SPMB_REQUIREMENTS, SPMB_SCHEDULE, SPMB_STEPS, SCHOOL } from "@/lib/school";
 
 export const metadata: Metadata = {
-  title: "PPDB",
+  title: "SPMB",
   description:
     "Informasi alur, syarat, dan jadwal pendaftaran peserta didik baru SD Taman Muda Jetis.",
 };
 
-export default function PPDBPage() {
+export default function SpmbPage() {
   return (
     <main>
       <PageHero
-        breadcrumb="PPDB"
-        eyebrow={PPDB.period}
+        breadcrumb="SPMB"
+        eyebrow={SPMB.period}
         title="Penerimaan Peserta Didik Baru"
         description="Lihat alur, syarat, dan jadwal pendaftaran siswa baru di SD Taman Muda Jetis."
       >
-        {PPDB.isOpen && (
+        {SPMB.isOpen && (
           <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-accent-300 ring-1 ring-white/15">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
             Pendaftaran sedang dibuka
@@ -38,7 +38,7 @@ export default function PPDBPage() {
               </h2>
 
               <ol className="mt-8 space-y-6">
-                {PPDB_STEPS.map((item) => (
+                {SPMB_STEPS.map((item) => (
                   <li key={item.step} className="flex gap-4">
                     <span
                       aria-hidden="true"
@@ -62,11 +62,11 @@ export default function PPDBPage() {
             <div>
               <p className="eyebrow">Jadwal</p>
               <h2 className="mt-2 font-display text-2xl font-bold text-primary-900 sm:text-3xl">
-                Jadwal PPDB
+                Jadwal SPMB
               </h2>
 
               <dl className="mt-8 space-y-3">
-                {PPDB_SCHEDULE.map((row) => (
+                {SPMB_SCHEDULE.map((row) => (
                   <div
                     key={row.stage}
                     className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-primary-100 bg-white px-5 py-4"
@@ -82,10 +82,10 @@ export default function PPDBPage() {
 
               <div className="mt-6 rounded-2xl border border-primary-100 bg-white p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-ink-soft">
-                  Kuota {(PPDB.quota).toLocaleString("id-ID")} peserta
+                  Kuota {(SPMB.quota).toLocaleString("id-ID")} peserta
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  {PPDB.contactNote} Untuk pendaftaran langsung, hubungi{" "}
+                  {SPMB.contactNote} Untuk pendaftaran langsung, hubungi{" "}
                   <a
                     href={SCHOOL.phoneHref}
                     className="font-semibold text-primary-700 underline underline-offset-2"
@@ -114,7 +114,7 @@ export default function PPDBPage() {
           </div>
 
           <ul className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-2">
-            {PPDB_REQUIREMENTS.map((item) => (
+            {SPMB_REQUIREMENTS.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-3 rounded-2xl border border-primary-100 bg-mist px-5 py-4"
@@ -144,7 +144,7 @@ export default function PPDBPage() {
               </p>
             </div>
 
-            <PPDBForm />
+            <SPMBForm />
           </div>
         </div>
       </section>
