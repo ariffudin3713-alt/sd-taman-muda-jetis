@@ -112,7 +112,7 @@ export default async function MobileHomePage() {
         </h1>
 
         <p className="mt-2.5 text-sm leading-relaxed text-primary-200">
-          {SCHOOL.shortName} - {SCHOOL.tagline}
+          {SCHOOL.shortName} – {SCHOOL.tagline}
         </p>
 
         <div className="mt-5 flex gap-2.5">
@@ -169,7 +169,7 @@ export default async function MobileHomePage() {
 
       {/* ---------------- Statistik sekolah ---------------- */}
       <section className="px-4">
-        <div className="grid grid-cols-2 gap-2.5 rounded-3xl border border-primary-100 bg-white p-4 shadow-card">
+        <div className="grid grid-cols-3 gap-2.5 rounded-3xl border border-primary-100 bg-white p-4 shadow-card">
           {HOME_STATS.map((stat) => (
             <div key={stat.label} className="rounded-2xl bg-mist px-3 py-3 text-center">
               <span className="block font-display text-xl font-extrabold text-primary-800">

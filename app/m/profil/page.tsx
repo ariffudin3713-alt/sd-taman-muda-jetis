@@ -17,7 +17,6 @@ const FACTS = [
   { label: "Tahun berdiri", value: "1995" },
   { label: "Akreditasi", value: "A" },
   { label: "NPSN", value: SCHOOL.npsn },
-  { label: "Program pengembangan diri", value: "8" },
 ];
 
 export default function MobileProfilPage() {
@@ -73,7 +72,7 @@ export default function MobileProfilPage() {
           {HISTORY}
         </p>
 
-        <dl className="mt-5 grid grid-cols-2 gap-2.5">
+        <dl className="mt-5 grid grid-cols-3 gap-2.5">
           {FACTS.map((fact) => (
             <div key={fact.label} className="rounded-2xl border border-primary-100 bg-mist p-4">
               <dt className="text-[11px] font-semibold uppercase tracking-wide text-ink-soft">

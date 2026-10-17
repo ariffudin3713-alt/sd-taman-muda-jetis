@@ -72,7 +72,7 @@ export default async function HomePage() {
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-200 sm:text-lg">
               Ikuti aktivitas belajar, lomba, dan kegiatan sekolah yang berjalan setiap
-              hari â€” langsung dari feed Instagram sekolah.
+              hari — langsung dari feed Instagram sekolah.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -167,7 +167,7 @@ export default async function HomePage() {
       {/* ---------------- Statistik sekolah ---------------- */}
       <section className="relative z-10 -mt-12">
         <div className="container-page">
-          <dl className="grid grid-cols-2 gap-4 rounded-3xl border border-primary-100 bg-white p-6 shadow-lift sm:grid-cols-4 sm:p-8">
+          <dl className="grid grid-cols-2 gap-4 rounded-3xl border border-primary-100 bg-white p-6 shadow-lift sm:grid-cols-3 sm:p-8">
             {HOME_STATS.map((stat) => (
               <div key={stat.label} className="px-2 py-2 text-center">
                 <dt className="sr-only">{stat.label}</dt>

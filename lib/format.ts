@@ -30,7 +30,7 @@ export const SCHOOL_TIME_ZONE = "Asia/Jakarta";
 const toSafeUrl = (value: string): string | undefined =>
   /^https?:\/\//i.test(value) ? value : undefined;
 
-/** Pecah satu baris menjadi token, sambilialize tautan & markdown. */
+/** Pecah satu baris menjadi token, sekaligus mengurai tautan & markdown. */
 function parseInline(raw: string): CaptionLine {
   const tokens: CaptionToken[] = [];
 

@@ -331,7 +331,7 @@ export function GalleryClient({
                 setQuery(event.target.value);
                 setShowAll(false);
               }}
-              placeholder="Cari kegiatan, prestasimu…"
+              placeholder="Cari kegiatan atau prestasi…"
               className="w-full rounded-full border border-primary-100 bg-mist py-3 pl-11 pr-4 text-sm outline-none transition placeholder:text-ink-soft/60 focus:border-primary-300 focus:bg-white focus:ring-4 focus:ring-primary-50"
             />
           </div>

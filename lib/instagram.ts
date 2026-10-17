@@ -27,7 +27,7 @@
  *   ]
  * }
  *
- * Catatan: salah satu entri (id "3") bukanunggahan Instagram, melainkan
+ * Catatan: salah satu entri (id "3") bukan unggahan Instagram, melainkan
  * berita sekolah yang diunggah manual (type null, post_url null, gambar dari
  * i.ibb.co.com). Kode di bawah tetap menampilkannya sebagai kartu "Berita".
  */

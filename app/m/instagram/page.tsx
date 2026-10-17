@@ -54,7 +54,7 @@ export default async function MobileInstagramPage() {
           Galeri Instagram
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-primary-200">
-          Aktivitas belajar, lomba, dan prestasi siswa - diperbarui otomatis tiap jam.
+          Aktivitas belajar, lomba, dan prestasi siswa – diperbarui otomatis tiap jam.
         </p>
 
         {views.length > 0 && (

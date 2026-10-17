@@ -72,7 +72,7 @@ export function MobileGallery({
               setQuery(event.target.value);
               setShowAll(false);
             }}
-            placeholder="Cari kegiatan atau juara..."
+            placeholder="Cari kegiatan atau prestasi…"
             className="w-full rounded-full border border-primary-100 bg-mist py-2.5 pl-10 pr-4 text-sm outline-none transition placeholder:text-ink-soft/60 focus:border-primary-300 focus:bg-white"
           />
         </div>

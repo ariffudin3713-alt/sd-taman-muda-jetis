@@ -1,13 +1,13 @@
 ﻿/**
- * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
- *  ISI FILE INI ADALAH TEKS CONTOH â€” GANTI DENGAN DATA ASLI SEKOLAH
- * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+ * ==================================================================
+ *  ISI FILE INI ADALAH TEKS CONTOH — GANTI DENGAN DATA ASLI SEKOLAH
+ * ==================================================================
  *
  * Semua konten statis situs (profil, visi & misi, sejarah, fasilitas,
- * profil, SPMB, kontak) dikumpulkan di satu file supaya mudah
- * diperbarui tanpa menyentuh komponen.
+ * SPMB, kontak) dikumpulkan di satu file supaya mudah diperbarui
+ * tanpa menyentuh komponen.
  *
- * Ingin mengganti isi? Cukup edit nilai di bawah â€” tidak ada kode
+ * Ingin mengganti isi? Cukup edit nilai di bawah — tidak ada kode
  * komponen yang perlu diubah.
  */
 
@@ -37,8 +37,8 @@ export const SCHOOL = {
 
 /** Jam layanan sekolah, ditampilkan di halaman kontak. */
 export const SCHOOL_HOURS = [
-  { day: "Senin â€“ Jumat", time: "07.00 â€“ 14.00 WIB" },
-  { day: "Sabtu", time: "07.00 â€“ 12.00 WIB" },
+  { day: "Senin – Jumat", time: "07.00 – 14.00 WIB" },
+  { day: "Sabtu", time: "07.00 – 12.00 WIB" },
   { day: "Minggu & hari libur", time: "Tutup" },
 ] as const;
 
@@ -60,9 +60,9 @@ export const HEAD_MASTER = {
   role: "Kepala Sekolah",
   photo: "/kepala-sekolah.jpg",
   paragraphs: [
-    "Assalamuâ€™alaikum dan selamat datang di website resmi SD Taman Muda Jetis Yogyakarta.",
+    "Assalamu’alaikum dan selamat datang di website resmi SD Taman Muda Jetis Yogyakarta.",
     "Kami menyediakan lingkungan belajar yang aman dan menyenangkan.",
-    "Setiap hari kami melatih mandiri, berkarakter, dan berkreativitas.",
+    "Setiap hari kami melatih kemandirian, karakter, dan kreativitas.",
     "Semoga website ini menjadi pintu informasi bagi warga sekolah.",
     "Terima kasih atas kunjungan dan kerja samanya.",
   ],
@@ -78,7 +78,7 @@ export const VISION =
 export const MISSIONS = [
   "Menyelenggarakan pembelajaran yang inovatif, kreatif, dan menyenangkan.",
   "Menanamkan nilai-nilai keagamaan dan budi pekerti luhur dalam keseharian.",
-  "Mengembangkan minat dan bakat siswa melalui kegiatan pengembangan diri.",
+  "Mengembangkan minat dan bakat siswa melalui berbagai kegiatan sekolah.",
   "Meningkatkan penguasaan teknologi informasi dan komunikasi.",
   "Membangun lingkungan sekolah yang bersih, hijau, dan ramah anak.",
 ] as const;
@@ -111,7 +111,7 @@ export const SPMB = {
 
 export const SPMB_STEPS = [
   { step: "1", title: "Pengambilan Formulir", description: "Datang ke sekolah pada jam kerja dan isi formulir pendaftaran." },
-  { step: "2", title: "Pemberian Berkas", description: "Serahkan dokumen pendukung bersama wali murid." },
+  { step: "2", title: "Penyerahan Berkas", description: "Serahkan dokumen pendukung bersama wali murid." },
   { step: "3", title: "Wawancara Orang Tua", description: "Wawancara singkat dengan kepala sekolah dan wali kelas." },
   { step: "4", title: "Pengumuman", description: "Hasil seleksi diumumkan dan pendaftaran dilunasi." },
 ] as const;
@@ -126,10 +126,10 @@ export const SPMB_REQUIREMENTS = [
 ] as const;
 
 export const SPMB_SCHEDULE = [
-  { stage: "Pendaftaran", date: "1 â€“ 20 Juni 2026" },
-  { stage: "Seleksi & Wawancara", date: "21 â€“ 25 Juni 2026" },
+  { stage: "Pendaftaran", date: "1 – 20 Juni 2026" },
+  { stage: "Seleksi & Wawancara", date: "21 – 25 Juni 2026" },
   { stage: "Pengumuman", date: "27 Juni 2026" },
-  { stage: "Registrasi ulang", date: "28 Juni â€“ 5 Juli 2026" },
+  { stage: "Registrasi ulang", date: "28 Juni – 5 Juli 2026" },
 ] as const;
 
 /* ------------------------------------------------------------------ *
@@ -140,6 +140,4 @@ export const HOME_STATS = [
   { value: "A", label: "Akreditasi" },
   { value: "420+", label: "Siswa aktif" },
   { value: "38+", label: "Guru dan staf" },
-  { value: "8", label: "Program pengembangan diri" },
 ] as const;
-
