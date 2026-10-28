@@ -84,7 +84,7 @@ export const MISSIONS = [
 ] as const;
 
 export const HISTORY =
-  "Didirikan pada tahun 1995, SD Taman Muda Jetis Yogyakarta terus berkembang menjadi salah satu lembaga pendidikan yang dipercaya di Yogyakarta. Dengan komitmen tinggi terhadap kualitas pengajaran dan pembentukan karakter, sekolah ini telah meluluskan ribuan alumni yang melanjutkan pendidikan ke jenjang yang lebih tinggi.";
+  "Perguruan Tamansiswa didirikan oleh Ki Hadjar Dewantara pada tanggal 3 Juli 1922 di Yogyakarta dengan nama National Onderwijs Instituut Taman Siswa. Taman Muda merupakan jenjang Sekolah Dasar dalam sistem pendidikan Tamansiswa yang menerapkan konsep pendidikan 'among' dengan tiga asas yaitu Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, dan Tut Wuri Handayani. SD Taman Muda Jetis Yogyakarta merupakan bagian dari jaringan Perguruan Tamansiswa yang terus melestarikan dan mengembangkan pendidikan nasional berbasis budaya bangsa dengan menumbuhkan peserta didik yang berakhlak mulia, mandiri, dan bertanggung jawab sesuai dengan filosofi pendidikan Ki Hadjar Dewantara.";
 
 /** `icon` menentukan ilustrasi SVG di kartu fasilitas (lihat components/icons.tsx). */
 export const FACILITIES = [
