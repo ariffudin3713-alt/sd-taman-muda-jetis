@@ -137,7 +137,7 @@ export const SPMB_SCHEDULE = [
  * ------------------------------------------------------------------ */
 
 export const HOME_STATS = [
-  { value: "B", label: "Akreditasi" },
+  { value: "A", label: "Akreditasi" },
   { value: "65+", label: "Siswa aktif" },
   { value: "13+", label: "Guru dan staf" },
 ] as const;
