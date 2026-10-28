@@ -45,18 +45,17 @@ export default async function HomePage() {
   return (
     <main>
       {/* ---------------- Hero ---------------- */}
-      <section className="relative isolate overflow-hidden bg-primary-900">
-        {views[0] && (
-          <div className="absolute inset-0 -z-10">
-            <img
-              src={views[0].mediaUrl}
-              alt=""
-              aria-hidden="true"
-              className="h-full w-full object-cover opacity-25"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900/95 to-primary-800" />
-          </div>
-        )}
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-20">
+          <img
+            src="https://cdn-sekolah.annibuku.com/20404159/4.jpg"
+            alt="SD Taman Muda Jetis Yogyakarta"
+            aria-hidden="true"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-black/60" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-950/80 via-primary-900/70 to-primary-800/60" />
 
         <div className="container-page grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
           <div className="animate-fade-up">
