@@ -258,40 +258,6 @@ export default async function MobileHomePage() {
         </section>
       )}
 
-      {/* ---------------- Sambutan kepala sekolah ---------------- */}
-      <section className="px-4 pb-6">
-        <MobileSectionHeading eyebrow="Sambutan" title="Kepala sekolah" />
-        <div className="overflow-hidden rounded-3xl border border-primary-100 bg-white">
-          <div className="flex items-center gap-3 bg-primary-800 p-4">
-            <span className="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-primary-700">
-              {HEAD_MASTER.photo ? (
-                <img
-                  src={HEAD_MASTER.photo}
-                  alt={`${HEAD_MASTER.name}, ${HEAD_MASTER.role}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <span className="flex h-full w-full items-center justify-center text-[10px] text-primary-300">
-                  Foto
-                </span>
-              )}
-            </span>
-            <span className="min-w-0">
-              <span className="block font-display text-sm font-bold text-white">
-                {HEAD_MASTER.name}
-              </span>
-              <span className="block text-xs text-primary-300">{HEAD_MASTER.role}</span>
-            </span>
-          </div>
-          <div className="space-y-3 p-4 text-sm leading-relaxed text-ink-soft">
-            {HEAD_MASTER.paragraphs.slice(0, 3).map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ---------------- Sorotan visual ---------------- */}
       {strip.length > 0 && (
         <section className="py-2 pb-8">

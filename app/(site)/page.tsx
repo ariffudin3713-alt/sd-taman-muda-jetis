@@ -185,46 +185,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ---------------- Sambutan kepala sekolah ---------------- */}
-      <section className="bg-white py-20 sm:py-24">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-3">
-            <div className="lg:col-span-1">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-primary-800">
-                {HEAD_MASTER.photo ? (
-                  <img
-                    src={HEAD_MASTER.photo}
-                    alt={`${HEAD_MASTER.name}, ${HEAD_MASTER.role}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  <span className="flex h-full w-full items-center justify-center text-sm text-primary-300">
-                    Foto kepala sekolah
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className="lg:col-span-2">
-              <p className="eyebrow">Sambutan</p>
-              <h2 className="mt-2 font-display text-2xl font-bold text-primary-900 sm:text-3xl">
-                Sambutan Kepala Sekolah
-              </h2>
-              <div className="mt-5 space-y-4 border-l-4 border-primary-600 pl-5 text-lg leading-relaxed text-ink-soft">
-                {HEAD_MASTER.paragraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-              <p className="mt-6 font-semibold text-primary-900">
-                {HEAD_MASTER.name}
-                <span className="ml-2 font-normal text-ink-soft">{HEAD_MASTER.role}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ---------------- Kabar Terbaru ---------------- */}
       {terbaru.length > 0 && (
         <section id="terbaru" className="bg-mist py-20 sm:py-24">
