@@ -19,20 +19,20 @@
 export const SITE_URL = "https://sdtamanmudajetis.sch.id";
 
 export const SCHOOL = {
-  name: "SD Taman Muda Jetis Yogyakarta",
-  shortName: "SD Taman Muda",
+  name: "SD Tamansiswa Jetis Yogyakarta",
+  shortName: "SD Tamansiswa Jetis",
   tagline: "Bertumbuh, Berprestasi, dan Berbudaya.",
   addressLines: [
     "Jl. Ki Hajar Dewantara No. 12",
     "Jetis, Kota Yogyakarta",
     "Daerah Istimewa Yogyakarta 55233",
   ],
-  phone: "(0231) 206279",
-  phoneHref: "tel:+62231206279",
-  email: "sdtamanmuda23@gmail.com",
+  phone: "(0274) 545517",
+  phoneHref: "tel:+62274545517",
+  email: "tamanmudajetis@gmail.com",
   instagram: "@sdtamanmudajetis",
   instagramUrl: "https://www.instagram.com/sdtamanmudajetis/",
-  npsn: "20405123",
+  npsn: "20404159",
 } as const;
 
 /** Jam layanan sekolah, ditampilkan di halaman kontak. */
@@ -137,7 +137,7 @@ export const SPMB_SCHEDULE = [
  * ------------------------------------------------------------------ */
 
 export const HOME_STATS = [
-  { value: "A", label: "Akreditasi" },
-  { value: "420+", label: "Siswa aktif" },
-  { value: "38+", label: "Guru dan staf" },
+  { value: "B", label: "Akreditasi" },
+  { value: "65+", label: "Siswa aktif" },
+  { value: "13+", label: "Guru dan staf" },
 ] as const;
